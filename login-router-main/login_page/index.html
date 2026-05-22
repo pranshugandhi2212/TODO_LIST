@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/yono-favicon.svg?v=1" />
+    <link rel="apple-touch-icon" href="/yono-favicon.svg?v=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Yono Todolist is a structured task workspace for planning, execution, and delivery reporting."
+    />
+    <meta name="theme-color" content="#0a1f3a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Yono Todolist" />
+    <meta
+      property="og:description"
+      content="Manage tasks with clear ownership, priority workflow, and progress visibility."
+    />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Yono Todolist</title>
+  </head>
+  <body>
+    <div id="root">
+      <main style="min-height:100vh;display:grid;place-items:center;background:#f8fafc;color:#0f172a;font-family:Arial,sans-serif;padding:24px;">
+        <section style="max-width:520px;text-align:center;">
+          <h1 style="font-size:28px;margin:0 0 12px;">Yono Todolist is loading...</h1>
+          <p style="margin:0;color:#475569;">If this stays visible, refresh once with Ctrl + F5.</p>
+        </section>
+      </main>
+    </div>
+    <script>
+      window.addEventListener("error", function (event) {
+        var root = document.getElementById("root");
+        if (!root) return;
+        root.innerHTML =
+          '<main style="min-height:100vh;display:grid;place-items:center;background:#fff7ed;color:#111827;font-family:Arial,sans-serif;padding:24px;">' +
+          '<section style="max-width:680px;border:1px solid #fed7aa;background:#ffffff;border-radius:8px;padding:24px;box-shadow:0 10px 30px rgba(15,23,42,.12);">' +
+          '<p style="margin:0 0 8px;color:#c2410c;font-weight:700;">Frontend startup error</p>' +
+          '<h1 style="font-size:26px;margin:0 0 12px;">The app could not load in this browser.</h1>' +
+          '<pre style="white-space:pre-wrap;background:#111827;color:#f8fafc;border-radius:6px;padding:12px;overflow:auto;">' +
+          String(event.message || "Unknown error").replace(/[<>&]/g, function (c) { return {"<":"&lt;",">":"&gt;","&":"&amp;"}[c]; }) +
+          '</pre>' +
+          '<p style="margin:14px 0 0;color:#475569;">Try Ctrl + F5, or open http://127.0.0.1:5173 in an incognito window.</p>' +
+          '</section></main>';
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
